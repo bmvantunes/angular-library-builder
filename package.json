@@ -1,0 +1,41 @@
+{
+  "name": "angular-library-builder",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "CLI Tool to build Angular (2+) libraries and publish them to npm",
+  "main": "index.js",
+  "bin": {
+    "nglb": "./bin/nglb.js",
+    "angular-library-builder": "./bin/nglb.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint src/**/*.ts",
+    "build": "tsc -p tsconfig.json",
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "@types/yargs": "^6.6.0",
+    "standard-version": "^4.0.0",
+    "tslint": "^4.4.2",
+    "tslint-config-standard": "^4.0.0",
+    "typescript": "^2.1.6"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmvantunes/angular-library-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bmvantunes/angular-library-builder/issues"
+  },
+  "homepage": "https://github.com/bmvantunes/angular-library-builder#readme"
+}
