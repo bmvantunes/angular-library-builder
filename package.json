@@ -14,7 +14,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint src/**/*.ts",
     "build": "tsc -p tsconfig.json",
-    "release": "standard-version"
+    "release": "standard-version",
+    "commit": "git-cz"
   },
   "dependencies": {
     "yargs": "^6.6.0"
@@ -22,6 +23,8 @@
   "devDependencies": {
     "@types/node": "^7.0.5",
     "@types/yargs": "^6.6.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^1.2.0",
     "standard-version": "^4.0.0",
     "tslint": "^4.4.2",
     "tslint-config-standard": "^4.0.0",
@@ -37,5 +40,10 @@
   "bugs": {
     "url": "https://github.com/bmvantunes/angular-library-builder/issues"
   },
-  "homepage": "https://github.com/bmvantunes/angular-library-builder#readme"
+  "homepage": "https://github.com/bmvantunes/angular-library-builder#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
