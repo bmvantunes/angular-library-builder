@@ -18,10 +18,22 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "autoprefixer": "^6.7.5",
+    "csso": "^2.3.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "html-minifier": "^3.3.3",
+    "node-sass": "^4.5.0",
+    "postcss": "^5.2.15",
     "yargs": "^6.6.0"
   },
   "devDependencies": {
+    "@types/del": "^2.2.32",
+    "@types/gulp": "^3.8.32",
+    "@types/html-minifier": "^1.1.30",
     "@types/node": "^7.0.5",
+    "@types/node-sass": "^3.10.32",
     "@types/yargs": "^6.6.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^1.2.0",

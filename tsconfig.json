@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "rootDir": "./src",
     "outDir": "./",
-    "rootDir": "src",
-    "moduleResolution": "classic",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "module": "commonjs",
-    "declaration": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es6",
     "importHelpers": true,
-    "inlineSourceMap": true,
     "pretty": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,19 +19,13 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "lib": [
-      "es6"
-    ],
-    "types": [
-      "node"
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
-    "node_modules/**",
-    "dist/**"
+    "node_modules",
+    "test/fixtures"
   ]
 }
+

@@ -1,5 +1,5 @@
 import { Options } from 'yargs';
-import { OptionsKeys } from './options.keys';
+import { OptionsKeys } from '../model/options.keys';
 
 export const optionsValues: { [key: string]: Options } = {
   [OptionsKeys.ROOT_DIR] : {

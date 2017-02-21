@@ -3,6 +3,7 @@
 # compiled output
 /tmp
 /core
+/model
 /bin
 
 # dependencies
@@ -23,3 +24,12 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+#ignore ignore outputs after tests
+/test/fixtures/**/output
+
+#ignore everything except typescript
+*.js
+*.js.map
+*.d.ts
+*.metadata.json
