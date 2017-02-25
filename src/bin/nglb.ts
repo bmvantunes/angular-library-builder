@@ -14,5 +14,5 @@ const argv = yargs
   .epilog('Angular (2+) Library Builder')
   .argv;
 
-const builder = new AngularLibraryBuilder();
-builder.buildLibrary(argv);
+const builder = new AngularLibraryBuilder(argv);
+builder.buildLibrary();

@@ -1,8 +1,9 @@
-import gulp = require('gulp');
-const inlineNg2Template = require('gulp-inline-ng2-template');
+import * as gulp from 'gulp';
 import { OptionsKeys } from '../../model/options.keys';
 import { templateProcessor } from './inline-html-css.helpers/template.processor';
 import { styleProcessor } from './inline-html-css.helpers/style.processor';
+
+const inlineNg2Template = require('gulp-inline-ng2-template');
 
 /**
  * The task that inlines HTML and CSS inside the component

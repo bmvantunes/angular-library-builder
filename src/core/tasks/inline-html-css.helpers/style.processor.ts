@@ -1,6 +1,7 @@
 import { compileSass } from './sass.compiler';
+import * as postcss from 'postcss';
+
 const csso = require('csso');
-const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 
 /**
