@@ -1,4 +1,4 @@
-import gulp = require('gulp');
+import * as gulp from 'gulp';
 import { MainTask } from './tasks/main.task';
 
 /**
@@ -7,7 +7,7 @@ import { MainTask } from './tasks/main.task';
 export class AngularLibraryBuilder {
   private mainTask: MainTask;
 
-  constructor() {
+  constructor(private args: { [key: string]: string }) {
     this.mainTask = new MainTask();
   }
 
@@ -15,8 +15,8 @@ export class AngularLibraryBuilder {
    * Invoke mainTask to register all the other tasks in gulp api
    * Then run the main task with gulp.
    */
-  buildLibrary(argv: { [key: string]: string }) {
-    const taskName = this.mainTask.registerAllTasks(argv);
+  buildLibrary() {
+    const taskName = this.mainTask.registerAllTasks(this.args);
     gulp.start(taskName, this.onTasksEnd);
   }
 

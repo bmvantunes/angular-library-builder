@@ -1,5 +1,5 @@
-import gulp = require('gulp');
-import del = require('del');
+import * as gulp from 'gulp';
+import * as del from 'del';
 import { ITask } from './task.interface';
 import { OptionsKeys } from '../../model/options.keys';
 
