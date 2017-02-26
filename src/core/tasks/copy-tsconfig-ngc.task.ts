@@ -13,10 +13,11 @@ export class CopyTsconfigNgcTask implements ITask {
    */
   registerTask(argv: any, dependencies: string[] = []): string {
     const taskName = 'copy-tsconfig-ngc-task';
-    const relPathTsconfigNgc = path.relative(process.cwd(), 'tsconfig-ngc.json');
+    const pathFromDirname = path.resolve(__dirname, '../../tsconfig-ngc.json');
+    const relativePathFromCwd = path.relative(process.cwd(), pathFromDirname);
 
     gulp.task(taskName, dependencies, () => {
-      return gulp.src(relPathTsconfigNgc)
+      return gulp.src(relativePathFromCwd)
         .pipe(gulp.dest(argv[OptionsKeys.OUT_DIR]));
     });
 
