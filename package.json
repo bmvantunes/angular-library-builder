@@ -15,7 +15,6 @@
     "example": "npm run build && node bin/nglb.js --rootDir test/fixtures/scss-does-not-compile/input --outDir test/fixtures/scss-does-not-compile/output",
     "lint": "tslint src/**/*.ts",
     "build": "tsc -p tsconfig.json",
-    "release": "standard-version",
     "commit": "git-cz"
   },
   "dependencies": {
@@ -47,10 +46,8 @@
     "chai-fs": "^1.0.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^1.2.0",
-    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
-    "standard-version": "^4.0.0",
     "ts-node": "^2.1.0",
     "tslint": "^4.4.2",
     "tslint-config-standard": "^4.0.0",
