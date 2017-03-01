@@ -2,6 +2,8 @@
 /src
 /node_modules
 /test
+/.nyc_output
+/coverage
 
 # ignore typescript files
 *.ts
