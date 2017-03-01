@@ -7,8 +7,6 @@ import { render, SassError, Result } from 'node-sass';
  *   the resulting css and the initial callback
  */
 export function compileSass(path: string, ext: any, file: string, callback: Function, onSuccess: Function) {
-  console.log(`Compiling ${ext.input}`);
-
   render({
     data: file,
     outputStyle: 'compressed'
@@ -18,7 +16,6 @@ export function compileSass(path: string, ext: any, file: string, callback: Func
       callback(error);
     }
     else { // everything went well :)
-      console.log(`Compiled ${ext.input}`);
       onSuccess(result.css, callback);
     }
 
