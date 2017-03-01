@@ -3,7 +3,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "CLI Tool to build Angular (2+) libraries and publish them to npm",
   "main": "index.js",
   "bin": {
@@ -15,7 +15,9 @@
     "example": "npm run build && node bin/nglb.js --rootDir test/fixtures/scss-does-not-compile/input --outDir test/fixtures/scss-does-not-compile/output",
     "lint": "tslint src/**/*.ts",
     "build": "tsc -p tsconfig.json",
-    "commit": "git-cz"
+    "prepublish": "npm run build",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
     "@angular/compiler": "^2.4.8",
@@ -51,14 +53,15 @@
     "ts-node": "^2.1.0",
     "tslint": "^4.4.2",
     "tslint-config-standard": "^4.0.0",
-    "typescript": "^2.1.6"
+    "typescript": "^2.1.6",
+    "semantic-release": "^6.3.2"
   },
   "engines": {
     "node": ">=6"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmvantunes/angular-library-builder.git"
+    "url": "https://github.com/bmvantunes/angular-library-builder.git"
   },
   "bugs": {
     "url": "https://github.com/bmvantunes/angular-library-builder/issues"
