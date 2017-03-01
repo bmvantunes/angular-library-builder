@@ -20,6 +20,7 @@
 npm-debug.log
 testem.log
 /typings
+.nyc_output
 
 #System Files
 .DS_Store
@@ -33,3 +34,9 @@ Thumbs.db
 *.js.map
 *.d.ts
 *.metadata.json
+
+#apart from test output-expected
+!/test/fixtures/**/output-expected/*.js
+!/test/fixtures/**/output-expected/*.js.map
+!/test/fixtures/**/output-expected/*.d.ts
+!/test/fixtures/**/output-expected/*.metadata.json

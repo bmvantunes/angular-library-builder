@@ -17,7 +17,6 @@ export class NgcCompileTask implements ITask {
 
     gulp.task(taskName, dependencies, (done: Function) => {
       main(ngcArguments).then((exitCode: number) => {
-        console.log('ngc success!!!');
         done();
       });
     });

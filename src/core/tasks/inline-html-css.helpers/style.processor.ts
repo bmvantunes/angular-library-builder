@@ -13,7 +13,6 @@ export function styleProcessor(path: string, ext: any, file: string, cb: Functio
   if (['.scss', '.sass'].indexOf(ext[0]) >= 0) {
     compileSass(path, ext, file, cb, applyOptimization);
   } else {
-    console.log(`Plain css file ${ext.input} added`);
     applyOptimization(file, cb);
   }
 }

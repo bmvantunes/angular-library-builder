@@ -3,7 +3,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "CLI Tool to build Angular (2+) libraries and publish them to npm",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,8 @@
     "angular-library-builder": "./bin/nglb.js"
   },
   "scripts": {
-    "test": "npm run build && node bin/nglb.js --rootDir test/fixtures/basic-html-only/input --outDir test/fixtures/basic-html-only/output",
+    "test": "nyc mocha src/**/*.spec.ts --timeout 15000",
+    "example": "npm run build && node bin/nglb.js --rootDir test/fixtures/scss-does-not-compile/input --outDir test/fixtures/scss-does-not-compile/output",
     "lint": "tslint src/**/*.ts",
     "build": "tsc -p tsconfig.json",
     "release": "standard-version",
@@ -34,15 +35,23 @@
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
+    "@types/chai": "^3.4.35",
     "@types/del": "^2.2.32",
     "@types/gulp": "^3.8.32",
     "@types/html-minifier": "^1.1.30",
+    "@types/mocha": "^2.2.39",
     "@types/node": "^7.0.5",
     "@types/node-sass": "^3.10.32",
     "@types/yargs": "^6.6.0",
+    "chai": "^3.5.0",
+    "chai-fs": "^1.0.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^1.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
     "standard-version": "^4.0.0",
+    "ts-node": "^2.1.0",
     "tslint": "^4.4.2",
     "tslint-config-standard": "^4.0.0",
     "typescript": "^2.1.6"

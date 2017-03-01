@@ -7,13 +7,18 @@ import * as path from 'path';
  * Copy tsconfig-ngc.json to the outDir folder
  */
 export class CopyTsconfigNgcTask implements ITask {
+  /**
+   * tsconfig-ngc.json path.
+   * Path from this file to tsconfig-ngc.json when project is compiled to javascript
+   */
+  static tsconfigPath = '../../tsconfig-ngc.json';
 
   /**
    * Registring the task
    */
   registerTask(argv: any, dependencies: string[] = []): string {
     const taskName = 'copy-tsconfig-ngc-task';
-    const pathFromDirname = path.resolve(__dirname, '../../tsconfig-ngc.json');
+    const pathFromDirname = path.resolve(__dirname, CopyTsconfigNgcTask.tsconfigPath);
     const relativePathFromCwd = path.relative(process.cwd(), pathFromDirname);
 
     gulp.task(taskName, dependencies, () => {

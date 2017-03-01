@@ -1,0 +1,7 @@
+$my-color: red;
+
+.my-class {
+  background-color: $my-color;
+  color: $variable-that-does-not-exist; // should break here!!!
+  position: sticky;
+}
