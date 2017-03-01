@@ -8,7 +8,7 @@ import { render, SassError, Result } from 'node-sass';
  */
 export function compileSass(path: string, ext: any, file: string, callback: Function, onSuccess: Function) {
   render({
-    data: file,
+    data: file || ' ', // we need a better solution for this!
     outputStyle: 'compressed'
   }, (error: SassError, result: Result) => {
 

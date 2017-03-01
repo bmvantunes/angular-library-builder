@@ -21,6 +21,10 @@ describe('Integration Tests', () => {
     runIntegrationTestExpectSuccess('basic-html-no-css', done);
   });
 
+  it('should allow empty scss files without node-sass errors', (done) => {
+    runIntegrationTestExpectSuccess('allow-empty-scss-files', done);
+  });
+
   // it('Expect Scss problems - Exception', (done) => {
   //   runIntegrationTestExpectExceptionNoOutput('scss-does-not-compile', done);
   // });
