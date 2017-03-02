@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/bmvantunes/angular-library-builder.svg?branch=master)](https://travis-ci.org/bmvantunes/angular-library-builder)
+[![dependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/status.svg)](https://david-dm.org/bmvantunes/angular-library-builder)
+[![devDependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/dev-status.svg)](https://david-dm.org/bmvantunes/angular-library-builder?type=dev)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![npm version](https://badge.fury.io/js/angular-library-builder.svg)](https://badge.fury.io/js/angular-library-builder)
 
 # What is Angular Library Builder?
 It's a CLI Tool to build Angular (2+) libraries and publish them to npm
