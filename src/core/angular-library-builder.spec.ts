@@ -13,16 +13,20 @@ describe('Integration Tests', () => {
     chai.use(require('chai-fs'));
   });
 
-  it('Basic html, basic css and scss', (done) => {
+  it('should be able to handle Basic html, basic css and scss files', (done) => {
     runIntegrationTestExpectSuccess('basic-html-basic-scss-and-css', done);
   });
 
-  it('Html with Angular attributes [property] and *ngIf and no css', (done) => {
+  it('should process html with Angular attributes [property] and *ngIf', (done) => {
     runIntegrationTestExpectSuccess('basic-html-no-css', done);
   });
 
-  it('should allow empty scss files without node-sass errors', (done) => {
+  it('should allow empty/no-content scss files without node-sass errors', (done) => {
     runIntegrationTestExpectSuccess('allow-empty-scss-files', done);
+  });
+
+  it('should ignore all *.spec.ts files and not output them to outDir folder', (done) => {
+    runIntegrationTestExpectSuccess('basic-html-no-css-with-spec-files', done);
   });
 
   // it('Expect Scss problems - Exception', (done) => {
