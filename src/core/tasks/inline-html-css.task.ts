@@ -19,10 +19,11 @@ export class InlineHtmlCssTask {
     const taskName = 'inline-html-css-task';
     const inputFolder = `./${argv[OptionsKeys.ROOT_DIR]}`;
     const inputTypescriptFiles = `${inputFolder}/**/*.ts`;
+    const rejectTypescriptSpecFiles = `!${inputFolder}/**/*.spec.ts`;
     const destFolder = `./${argv[OptionsKeys.OUT_DIR]}`;
 
     gulp.task(taskName, dependencies, () => {
-      return gulp.src(inputTypescriptFiles)
+      return gulp.src([inputTypescriptFiles, rejectTypescriptSpecFiles])
         .pipe(inlineNg2Template(this.getInlineNg2ConfigObject(inputFolder)))
         .pipe(gulp.dest(destFolder));
     });
