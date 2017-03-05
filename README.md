@@ -6,6 +6,8 @@
 [![npm version](https://badge.fury.io/js/angular-library-builder.svg)](https://badge.fury.io/js/angular-library-builder)
 
 # What is Angular Library Builder?
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bmvantunes/angular-library-builder.svg)](https://greenkeeper.io/)
 It's a CLI Tool to build Angular (2+) libraries and publish them to npm
 
 # Getting Started
