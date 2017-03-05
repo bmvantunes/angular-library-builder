@@ -8,8 +8,9 @@ import { render, SassError, Result } from 'node-sass';
  */
 export function compileSass(path: string, ext: any, file: string, callback: Function, onSuccess: Function) {
   render({
-    data: file || ' ', // we need a better solution for this!
-    outputStyle: 'compressed'
+    file: path,
+    outputStyle: 'compressed',
+    importer: importer
   }, (error: SassError, result: Result) => {
 
     if (error) { // Ups problems...
@@ -20,4 +21,16 @@ export function compileSass(path: string, ext: any, file: string, callback: Func
     }
 
   });
+}
+
+/**
+ * When the compiler tries to import something like @import "~something/something"
+ * it will actually get the file /your/project/path/node_modules/something/something.scss
+ * This only happens if we type ~ in the beginning of the import path.
+ * Otherwise it would work as normally node-sass works:
+ *   node-sass will try to use something like ./something/something.scss
+ */
+function importer(url: string, prev: any, done: Function) {
+  const newPath = url.replace(/^~/, `${process.cwd()}/node_modules/`);
+  done({ file: newPath });
 }
