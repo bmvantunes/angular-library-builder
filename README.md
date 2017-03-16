@@ -23,7 +23,7 @@ At the moment there is no official documentation/guidelines on how to build and 
     - [node-sass](https://www.npmjs.com/package/node-sass) to compile scss/sass file(s) 
     - [autoprefixer](https://www.npmjs.com/package/autoprefixer) to improve browser compatibilty
     - [csso](https://www.npmjs.com/package/csso) to minimize/optimize your css
-3. Finally, it compiles your resulting typescript files with all your html and css inlined, using @angular/compiler-cli (ngc), creating `.d.ts`, `.js`, `.js.map`, `.metadata.json`
+3. Finally, it compiles your resulting typescript files with all your html and css inlined, using @angular/compiler-cli (ngc), creating `*.d.ts`, `*.js`, `*.js.map`, `*.metadata.json` files
 
 # Getting Started
 
