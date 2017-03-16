@@ -4,8 +4,7 @@
   "author": "",
   "license": "MIT",
   "version": "0.0.0-semantically-released",
-  "description": "CLI Tool to build Angular (2+) libraries and publish them to npm",
-  "main": "index.js",
+  "description": "CLI Tool to build Angular (2+) libraries ready to be published to npm",
   "bin": {
     "nglb": "./bin/nglb.js",
     "angular-library-builder": "./bin/nglb.js"

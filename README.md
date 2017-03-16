@@ -7,32 +7,63 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/bmvantunes/angular-library-builder.svg)](https://greenkeeper.io/)
 
+# What is Angular Library Builder (nglb)?
 
-# What is Angular Library Builder?
+It's a CLI Tool to build Angular (2+) libraries ready to be published to [npm](https://www.npmjs.com/).
 
-It's a CLI Tool to build Angular (2+) libraries and publish them to npm
+### What problem is Angular Library Builder (nglb) trying to solve?
+
+At the moment there is no official documentation/guidelines on how to build and publish Angular (2+) components/libraries/services/modules to npm. Angular Library Builder (nglb) is trying to solve this in the easiest way possible.
+
+### How does Angular Library Builder (nglb) solve this?
+
+1. If it is a component, inlines html template file into the component as a string, replacing `templateUrl` with `template`
+    - In the inlining process nglb also minifies html using [html-minifier](https://www.npmjs.com/package/html-minifier)
+2. If it is a component, Inlines scss/sass/css file(s) into the component as a string, replacing `stylesUrls` with `styles`. It uses:
+    - [node-sass](https://www.npmjs.com/package/node-sass) to compile scss/sass file(s) 
+    - [autoprefixer](https://www.npmjs.com/package/autoprefixer) to improve browser compatibilty
+    - [csso](https://www.npmjs.com/package/csso) to minimize/optimize your css
+3. Finally, it compiles your resulting typescript files with all your html and css inlined, using @angular/compiler-cli (ngc), creating `.d.ts`, `.js`, `.js.map`, `.metadata.json`
 
 # Getting Started
 
 #### Install the `angular-library-builder` command
 
 ```sh
-npm install --global angular-library-builder
+npm install --save-dev angular-library-builder
 ```
 
 #### How to use `angular-library-builder`?
 
-Run the angular-library-builder (nglb) command in your project directory:
+Add angular-library-builder (nglb) script, main and types to `package.json`:
 
-```sh
-nglb --rootDir src/lib --outDir dist
+```json
+"main": "./lib-dist/your-main-file.js",
+"types": "./lib-dist/your-main-file.d.ts",
+"scripts": {
+  "build:library": "nglb --rootDir src/lib --outDir lib-dist"
+}
 ```
 or
-```sh
-angular-library-builder --rootDir src/lib --outDir dist
+```json
+"main": "./lib-dist/your-main-file.js",
+"types": "./lib-dist/your-main-file.d.ts",
+"scripts": {
+  "build:library": "angular-library-builder --rootDir src/lib --outDir lib-dist"
+}
 ```
 
-Congratulations! Your library is in dist folder ready to be published to npm
+Now, in your project root:
+```sh
+npm run build:library
+```
+
+Congratulations! Your library is in lib-dist folder ready to be published to npm.
+
+To publish your new library to npm, execute the following command in your project root: 
+```sh
+npm publish
+```
 
 #### Options that `angular-library-builder` supports
 option (argument) | description
@@ -41,8 +72,12 @@ option (argument) | description
 --outDir | Redirect output structure to the directory. Example: ```nglb --outDir dist```, [required]
 --help (-h) | Print help message
 
-#Authors and Contributors
+# Authors and Contributors
 
 @bmvantunes (Bruno Antunes, author)
 
 Special thanks to [gulp-inline-ng2-template](https://github.com/ludohenin/gulp-inline-ng2-template). Without [gulp-inline-ng2-template](https://github.com/ludohenin/gulp-inline-ng2-template) `angular-library-builder` would not be possible!
+
+# License
+
+The repository code is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
