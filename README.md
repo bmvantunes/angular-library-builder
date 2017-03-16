@@ -19,11 +19,11 @@ At the moment there is no official documentation/guidelines on how to build and 
 
 1. If it is a component, inlines html template file into the component as a string, replacing `templateUrl` with `template`
     - In the inlining process nglb also minifies html using [html-minifier](https://www.npmjs.com/package/html-minifier)
-2. If it is a component, Inlines scss/sass/css file(s) into the component as a string, replacing `stylesUrls` with `styles`. It uses:
+2. If it is a component, inlines scss/sass/css file(s) into the component as a string, replacing `stylesUrls` with `styles`. It uses:
     - [node-sass](https://www.npmjs.com/package/node-sass) to compile scss/sass file(s) 
     - [autoprefixer](https://www.npmjs.com/package/autoprefixer) to improve browser compatibilty
     - [csso](https://www.npmjs.com/package/csso) to minimize/optimize your css
-3. Finally, it compiles your resulting typescript files with all your html and css inlined, using @angular/compiler-cli (ngc), creating `.d.ts`, `.js`, `.js.map`, `.metadata.json`
+3. Finally, it compiles your resulting typescript files with all your html and css inlined, using @angular/compiler-cli (ngc), creating `*.d.ts`, `*.js`, `*.js.map`, `*.metadata.json` files
 
 # Getting Started
 
