@@ -20,11 +20,11 @@ export class MainTask {
     this.ngcTask = new NgcCompileTask();
   }
 
-  registerAllTasks(argv: any) {
-    const deleteTaskName = this.deleteTask.registerTask(argv);
-    const inlineTaskName = this.inlineTask.registerTask(argv, [deleteTaskName]);
-    const copyTsconfigTaskName = this.copyTsconfigTask.registerTask(argv, [inlineTaskName]);
-    const ngcTaskName = this.ngcTask.registerTask(argv, [copyTsconfigTaskName]);
+  registerAllTasks(argv: any, onError: Function) {
+    const deleteTaskName = this.deleteTask.registerTask(argv, onError);
+    const inlineTaskName = this.inlineTask.registerTask(argv, onError, [deleteTaskName]);
+    const copyTsconfigTaskName = this.copyTsconfigTask.registerTask(argv, onError, [inlineTaskName]);
+    const ngcTaskName = this.ngcTask.registerTask(argv, onError, [copyTsconfigTaskName]);
     const taskName = 'main-task';
 
     gulp.task(taskName, [ngcTaskName]);

@@ -11,7 +11,7 @@ export class DeleteDestFolderTask implements ITask {
   /**
    * Registring the task
    */
-  registerTask(argv: any, dependencies: string[] = []): string {
+  registerTask(argv: any, onError: Function, dependencies: string[] = []): string {
     const taskName = 'delete-dest-folder-task';
 
     gulp.task(taskName, dependencies ,() => {

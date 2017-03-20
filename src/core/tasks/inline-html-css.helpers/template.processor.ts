@@ -1,4 +1,5 @@
 import { minify } from 'html-minifier';
+import { Logger } from '../../services/logger';
 
 /**
  * Using html-minifier in order to minify our HTML
@@ -17,6 +18,7 @@ export function templateProcessor(path: string, ext: string, file: string, cb: F
     cb(null, minifiedFile);
   }
   catch (err) {
+    Logger.error('Problem with html-minifier. Please create an issue https://github.com/bmvantunes/angular-library-builder');
     cb(err);
   }
 }

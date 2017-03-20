@@ -2,6 +2,7 @@ import * as gulp from 'gulp';
 import { OptionsKeys } from '../../model/options.keys';
 import { templateProcessor } from './inline-html-css.helpers/template.processor';
 import { styleProcessor } from './inline-html-css.helpers/style.processor';
+import * as plumber from 'gulp-plumber';
 
 const inlineNg2Template = require('gulp-inline-ng2-template');
 
@@ -15,7 +16,7 @@ export class InlineHtmlCssTask {
   /**
    * Registring the task
    */
-  registerTask(argv: any, dependencies: string[] = []): string {
+  registerTask(argv: any, onError: Function, dependencies: string[] = []): string {
     const taskName = 'inline-html-css-task';
     const inputFolder = `./${argv[OptionsKeys.ROOT_DIR]}`;
     const inputTypescriptFiles = `${inputFolder}/**/*.ts`;
@@ -24,6 +25,7 @@ export class InlineHtmlCssTask {
 
     gulp.task(taskName, dependencies, () => {
       return gulp.src([inputTypescriptFiles, rejectTypescriptSpecFiles])
+        .pipe(plumber(onError))
         .pipe(inlineNg2Template(this.getInlineNg2ConfigObject(inputFolder)))
         .pipe(gulp.dest(destFolder));
     });

@@ -1,5 +1,6 @@
 import { compileSass } from './sass.compiler';
 import * as postcss from 'postcss';
+import { Logger } from '../../services/logger';
 
 const csso = require('csso');
 const autoprefixer = require('autoprefixer');
@@ -34,6 +35,7 @@ function applyOptimization(css = '', cb: Function) {
     cb(null, minified);
   }
   catch (err) {
+    Logger.error('Problem with autoprefixer/csso. Please create an issue https://github.com/bmvantunes/angular-library-builder');
     cb(err);
   }
 }
