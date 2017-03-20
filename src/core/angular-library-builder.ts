@@ -1,5 +1,6 @@
 import * as gulp from 'gulp';
 import { MainTask } from './tasks/main.task';
+import { Logger } from './services/logger';
 
 /**
  * This is just an abstraction on top of gulp
@@ -16,14 +17,22 @@ export class AngularLibraryBuilder {
    * Then run the main task with gulp.
    */
   buildLibrary() {
-    const taskName = this.mainTask.registerAllTasks(this.args);
-    gulp.start(taskName, this.onTasksEnd);
+    const taskName = this.mainTask.registerAllTasks(this.args, this.onError);
+    gulp.start(taskName, this.onSuccess);
   }
 
   /**
    * When everything finishes with success this method should be called!
    */
-  onTasksEnd() {
-    console.log('Your library was successfully built! Congratulations!');
+  onSuccess() {
+    Logger.success('Your library was successfully built! Congratulations!');
+    process.exit(0);
+  }
+
+  /**
+   * When something wrong happens this method should be called!
+   */
+  onError() {
+    Logger.warning('\nUnfortunately we were not able to build your library! :( \n');
   }
 }

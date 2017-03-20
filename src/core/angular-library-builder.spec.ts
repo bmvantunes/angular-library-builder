@@ -57,7 +57,7 @@ function runIntegrationTestExpectSuccess(testName: string, done: Function) {
     [OptionsKeys.OUT_DIR]: outputFolder,
   });
 
-  builder.onTasksEnd = () => {
+  builder.onSuccess = () => {
     (<any>expect(outputFolder).to.be.a).directory().and.equal(expectedOutputFolder);
     done();
   }

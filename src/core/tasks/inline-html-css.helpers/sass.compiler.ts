@@ -1,4 +1,5 @@
-import { render, SassError, Result } from 'node-sass';
+import { render, Result } from 'node-sass';
+import { Logger } from '../../services/logger';
 
 /**
  * We use node-sass to compile our scss/sass
@@ -11,9 +12,10 @@ export function compileSass(path: string, ext: any, file: string, callback: Func
     file: path,
     outputStyle: 'compressed',
     importer: importer
-  }, (error: SassError, result: Result) => {
+  }, (error: any, result: Result) => {
 
     if (error) { // Ups problems...
+      Logger.error(error.formatted);
       callback(error);
     }
     else { // everything went well :)
