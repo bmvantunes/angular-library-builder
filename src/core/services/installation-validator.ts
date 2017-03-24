@@ -13,7 +13,7 @@ export class InstallationValidator {
   }
 
   private static messageInstallLocally() {
-    Logger.error(`You need to have angular-library-builder installed locally`);
+    Logger.error(`You should install angular-library-builder locally`);
     Logger.error(`npm install --save-dev angular-library-builder`);
   }
 
