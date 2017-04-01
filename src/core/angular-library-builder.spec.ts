@@ -54,13 +54,13 @@ function runIntegrationTestExpectSuccess(testName: string, done: Function) {
 
   const builder = new AngularLibraryBuilder({
     [OptionsKeys.ROOT_DIR]: inputFolder,
-    [OptionsKeys.OUT_DIR]: outputFolder,
+    [OptionsKeys.OUT_DIR]: outputFolder
   });
 
   builder.onSuccess = () => {
-    (<any>expect(outputFolder).to.be.a).directory().and.equal(expectedOutputFolder);
+    (expect(outputFolder).to.be.a as any).directory().and.equal(expectedOutputFolder);
     done();
-  }
+  };
 
   builder.buildLibrary();
 }
