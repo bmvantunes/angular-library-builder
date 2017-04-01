@@ -16,7 +16,6 @@ var BasicComponent = (function () {
 }());
 BasicComponent = __decorate([
     Component({
-        moduleId: module.id,
         selector: 'selector',
         template: "Super Simple HTML<div></div><div></div>",
         styles: [""]
