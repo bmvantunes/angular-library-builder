@@ -7,7 +7,8 @@
     "declaration": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "lib": ["es2015", "dom"]
+    "lib": ["es2015", "dom"],
+    "types": []
   },
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
