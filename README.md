@@ -58,7 +58,7 @@ Now, in your project root:
 npm run build:library
 ```
 
-Congratulations! Your library is in lib-dist folder ready to be published to npm.
+Congratulations! Your library is available in lib-dist folder ready to be published to npm.
 
 To publish your new library to npm, execute the following command in your project root: 
 ```sh
@@ -70,7 +70,33 @@ option (argument) | description
 ------------ | -------------
 --rootDir | Specifies the root directory of input files. Example: ```nglb --rootDir src```, [required]
 --outDir | Redirect output structure to the directory. Example: ```nglb --outDir dist```, [required]
+--tsconfig | Possibility to extend/override properties in default [tsconfig-ngc.json](https://github.com/bmvantunes/angular-library-builder/blob/master/tsconfig-ngc.json). Example: ```nglb --tsconfig path/to/your/override-tsconfig-ngc.json```
 --help (-h) | Print help message
+
+
+# How to change `angular-library-builder` [tsconfig-ngc.json](https://github.com/bmvantunes/angular-library-builder/blob/master/tsconfig-ngc.json) default properties?
+Sometimes the defaults aren't good enough for everybody.
+
+#### Example
+Let's imagine that you want to change slightly the build process:
+1. change the default "target" from "es5" to "es2015"
+2. add a new property, for example, "noImplicitAny": true,
+
+To acomplish this create a file called, for example, ```override-tsconfig-ngc.json``` in your project root.
+Your ```override-tsconfig-ngc.json``` file can be something like:
+```json
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "noImplicitAny": true
+  }
+}
+```
+
+Then, you invoke nglb like this:
+```bash
+nglb --rootDir path/to/your/source --outDir path/to/dist --tsconfig override-tsconfig-ngc.json
+```
 
 # Authors and Contributors
 
