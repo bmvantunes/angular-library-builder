@@ -11,5 +11,10 @@ export const optionsValues: { [key: string]: Options } = {
     describe: 'Redirect output structure to the directory',
     demand: true,
     type: 'string'
+  },
+  [OptionsKeys.TSCONFIG]: {
+    describe: 'Extends/Overrides the default angular-library-builder tsconfig-ngc.json file used by ngc (angular compiler)',
+    demand: false,
+    type: 'string'
   }
 };
