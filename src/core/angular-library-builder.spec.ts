@@ -14,19 +14,23 @@ describe('Integration Tests', () => {
   });
 
   it('should be able to handle Basic html, basic css and scss files', (done) => {
-    runIntegrationTestExpectSuccess('basic-html-basic-scss-and-css', done);
+    runIntegrationTestExpectSuccess('basic-html-basic-scss-and-css', false, done);
   });
 
   it('should process html with Angular attributes [property] and *ngIf', (done) => {
-    runIntegrationTestExpectSuccess('basic-html-no-css', done);
+    runIntegrationTestExpectSuccess('basic-html-no-css', false, done);
   });
 
   it('should allow empty/no-content scss files without node-sass errors', (done) => {
-    runIntegrationTestExpectSuccess('allow-empty-scss-files', done);
+    runIntegrationTestExpectSuccess('allow-empty-scss-files', false, done);
   });
 
   it('should ignore all *.spec.ts files and not output them to outDir folder', (done) => {
-    runIntegrationTestExpectSuccess('basic-html-no-css-with-spec-files', done);
+    runIntegrationTestExpectSuccess('basic-html-no-css-with-spec-files', false, done);
+  });
+
+  it('should override the tsconfig basic-html-no-css-override-tsconfig', (done) => {
+    runIntegrationTestExpectSuccess('basic-html-no-css-override-tsconfig', true, done);
   });
 
   // it('Expect Scss problems - Exception', (done) => {
@@ -47,20 +51,28 @@ describe('Integration Tests', () => {
 //   expect(builder.buildLibrary).to.throw();
 // }
 
-function runIntegrationTestExpectSuccess(testName: string, done: Function) {
+function runIntegrationTestExpectSuccess(testName: string, overrideTsconfig: boolean, done: Function) {
   const inputFolder = `test/fixtures/${testName}/input`;
   const outputFolder = `test/fixtures/${testName}/output`;
   const expectedOutputFolder = `test/fixtures/${testName}/output-expected`;
+  const tsconfigOverrideLocation = `test/fixtures/${testName}/input/override-tsconfig.json`;
 
-  const builder = new AngularLibraryBuilder({
+  const parameters = {
     [OptionsKeys.ROOT_DIR]: inputFolder,
     [OptionsKeys.OUT_DIR]: outputFolder,
-  });
+    [OptionsKeys.TSCONFIG]: tsconfigOverrideLocation
+  };
+
+  if (!overrideTsconfig) {
+    delete parameters[OptionsKeys.TSCONFIG];
+  }
+
+  const builder = new AngularLibraryBuilder(parameters);
 
   builder.onSuccess = () => {
-    (<any>expect(outputFolder).to.be.a).directory().and.equal(expectedOutputFolder);
+    (expect(outputFolder).to.be.a as any).directory().and.equal(expectedOutputFolder);
     done();
-  }
+  };
 
   builder.buildLibrary();
 }
