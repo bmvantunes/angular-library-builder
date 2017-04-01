@@ -29,6 +29,7 @@
     "del": "~2.2.2",
     "gulp": "~3.9.1",
     "gulp-inline-ng2-template": "~4.0.0",
+    "gulp-merge-json": "^1.0.0",
     "gulp-plumber": "^1.1.0",
     "html-minifier": "~3.4.0",
     "node-sass": "~4.5.0",
@@ -36,7 +37,7 @@
     "rxjs": "^5.1.0",
     "typescript": "~2.2.0",
     "yargs": "~7.0.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.8.5"
   },
   "devDependencies": {
     "@types/chai": "~3.4.35",
