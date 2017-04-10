@@ -40,7 +40,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@types/chai": "~3.4.35",
+    "@types/chai": "~3.5.0",
     "@types/chalk": "^0.4.31",
     "@types/del": "~2.2.32",
     "@types/gulp": "~4.0.0",
