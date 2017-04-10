@@ -59,7 +59,7 @@
     "nyc": "~10.2.0",
     "semantic-release": "~6.3.2",
     "ts-node": "~3.0.0",
-    "tslint": "~5.0.0",
+    "tslint": "~5.1.0",
     "tslint-config-standard": "~5.0.1"
   },
   "engines": {
