@@ -1,0 +1,14 @@
+# folders to ignore
+/src
+/node_modules
+/test
+/.nyc_output
+/coverage
+
+# ignore typescript files
+*.ts
+
+# ignore tsconfig.json and tslint
+tsconfig.json
+tslint.json
+

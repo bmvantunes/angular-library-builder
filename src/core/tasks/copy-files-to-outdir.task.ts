@@ -6,14 +6,14 @@ import * as plumber from 'gulp-plumber';
 /**
  * Copy markdown files and package.json to outDir folder
  */
-export class CopyPackageMarkdownFilesTask implements ITask {
+export class CopyFilesToOutdirTask implements ITask {
 
   /**
    * Registring the task
    */
   registerTask(argv: any, onError: Function, dependencies: string[] = []): string {
-    const taskName = 'copy-package-markdown-files-task';
-    const filesToCopy = ['package.json', '*.md'];
+    const taskName = 'copy-files-to-outdir-task';
+    const filesToCopy = ['package.json', '*.md', '.gitignore', '.npmignore', 'LICENSE'];
 
     gulp.task(taskName, dependencies, () => {
       return gulp.src(filesToCopy)
