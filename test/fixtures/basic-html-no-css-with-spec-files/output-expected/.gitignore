@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/tmp
+/core
+/model
+/bin
+
+# dependencies
+/node_modules
+
+# IDE - VSCode
+.vscode/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+.nyc_output
+
+#System Files
+.DS_Store
+Thumbs.db
+
+#ignore ignore outputs after tests
+/test/fixtures/**/output
+
+#ignore everything except typescript
+*.js
+*.js.map
+*.d.ts
+*.metadata.json
+
+#apart from test output-expected
+!/test/fixtures/**/output-expected/*.js
+!/test/fixtures/**/output-expected/*.js.map
+!/test/fixtures/**/output-expected/*.d.ts
+!/test/fixtures/**/output-expected/*.metadata.json
