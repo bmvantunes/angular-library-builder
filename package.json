@@ -31,7 +31,7 @@
     "gulp-inline-ng2-template": "~4.0.0",
     "gulp-merge-json": "^1.0.0",
     "gulp-plumber": "^1.1.0",
-    "html-minifier": "~3.4.3",
+    "html-minifier": "~3.5.0",
     "node-sass": "~4.5.2",
     "postcss": "~6.0.0",
     "rxjs": "^5.3.0",
