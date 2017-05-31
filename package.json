@@ -50,7 +50,7 @@
     "@types/node": "~7.0.12",
     "@types/node-sass": "~3.10.32",
     "@types/yargs": "~6.6.0",
-    "chai": "~3.5.0",
+    "chai": "~4.0.0",
     "chai-fs": "~1.0.0",
     "codecov": "^2.1.0",
     "commitizen": "~2.9.6",
