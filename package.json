@@ -47,7 +47,7 @@
     "@types/gulp-plumber": "0.0.30",
     "@types/html-minifier": "~1.1.30",
     "@types/mocha": "~2.2.40",
-    "@types/node": "~7.0.12",
+    "@types/node": "~8.0.0",
     "@types/node-sass": "~3.10.32",
     "@types/yargs": "~6.6.0",
     "chai": "~4.0.0",
