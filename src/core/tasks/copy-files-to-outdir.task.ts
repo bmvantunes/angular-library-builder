@@ -1,7 +1,8 @@
-import * as gulp from 'gulp';
 import { ITask } from './task.interface';
 import { OptionsKeys } from '../../model/options.keys';
 import * as plumber from 'gulp-plumber';
+
+const gulp = require('gulp');
 
 /**
  * Copy markdown files and package.json to outDir folder

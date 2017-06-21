@@ -1,8 +1,9 @@
-import * as gulp from 'gulp';
 import { ITask } from './task.interface';
 import { OptionsKeys } from '../../model/options.keys';
 import { main } from '@angular/compiler-cli/src/main';
 import { Logger } from '../services/logger';
+
+const gulp = require('gulp');
 
 /**
  * Compile our typescript files with ngc

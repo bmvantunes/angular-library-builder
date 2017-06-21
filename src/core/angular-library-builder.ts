@@ -1,6 +1,7 @@
-import * as gulp from 'gulp';
 import { MainTask } from './tasks/main.task';
 import { Logger } from './services/logger';
+
+const gulp = require('gulp');
 
 /**
  * This is just an abstraction on top of gulp
@@ -34,5 +35,6 @@ export class AngularLibraryBuilder {
    */
   onError() {
     Logger.warning('\nUnfortunately we were not able to build your library! :( \n');
+    process.exit(-1);
   }
 }
