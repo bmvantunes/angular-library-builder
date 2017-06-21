@@ -1,9 +1,10 @@
-import * as gulp from 'gulp';
 import { DeleteDestFolderTask } from './delete-dest-folder.task';
 import { InlineHtmlCssTask } from './inline-html-css.task';
 import { NgcCompileTask } from './ngc-compile.task';
 import { CopyTsconfigNgcTask } from './copy-tsconfig-ngc.task';
 import { CopyFilesToOutdirTask } from './copy-files-to-outdir.task';
+
+const gulp = require('gulp');
 
 /**
  * Main taks that manages all dependencies between other tasks

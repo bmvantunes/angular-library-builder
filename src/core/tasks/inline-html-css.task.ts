@@ -1,9 +1,9 @@
-import * as gulp from 'gulp';
 import { OptionsKeys } from '../../model/options.keys';
 import { templateProcessor } from './inline-html-css.helpers/template.processor';
 import { styleProcessor } from './inline-html-css.helpers/style.processor';
 import * as plumber from 'gulp-plumber';
 
+const gulp = require('gulp');
 const inlineNg2Template = require('gulp-inline-ng2-template');
 
 /**
