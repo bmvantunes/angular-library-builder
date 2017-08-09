@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/chai": "~4.0.0",
     "@types/chalk": "~0.4.31",
-    "@types/del": "~2.2.32",
+    "@types/del": "~3.0.0",
     "@types/gulp-plumber": "~0.0.30",
     "@types/html-minifier": "~1.1.30",
     "@types/mocha": "~2.2.41",
