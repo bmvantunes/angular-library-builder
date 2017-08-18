@@ -3,6 +3,9 @@
 import * as yargs from 'yargs';
 import { optionsValues } from './options.values';
 import { AngularLibraryBuilder } from '../core/angular-library-builder';
+import { InstallationValidator } from '../core/services/installation-validator';
+
+InstallationValidator.validateInstallation();
 
 const argv = yargs
   // help
