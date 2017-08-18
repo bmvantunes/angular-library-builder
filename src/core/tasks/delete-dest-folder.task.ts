@@ -1,7 +1,8 @@
-import * as gulp from 'gulp';
 import * as del from 'del';
 import { ITask } from './task.interface';
 import { OptionsKeys } from '../../model/options.keys';
+
+const gulp = require('gulp');
 
 /**
  * Delete our dist folder before every run
