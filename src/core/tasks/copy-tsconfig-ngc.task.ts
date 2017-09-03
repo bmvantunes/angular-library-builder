@@ -20,7 +20,7 @@ export class CopyTsconfigNgcTask implements ITask {
   /**
    * Registring the task
    */
-  registerTask(argv: any, onError: Function, dependencies: string[] = []): string {
+  registerTask(argv: any, onError: () => void, dependencies: string[] = []): string {
     const taskName = 'copy-tsconfig-ngc-task';
     const pathDefaultTsconfig = this.getPathToDefaultTsconfig();
     const pathCustomTsconfig = argv[OptionsKeys.TSCONFIG] || pathDefaultTsconfig;
