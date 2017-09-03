@@ -16,7 +16,7 @@ export class InlineHtmlCssTask {
   /**
    * Registring the task
    */
-  registerTask(argv: any, onError: Function, dependencies: string[] = []): string {
+  registerTask(argv: any, onError: () => void, dependencies: string[] = []): string {
     const taskName = 'inline-html-css-task';
     const inputFolder = `./${argv[OptionsKeys.ROOT_DIR]}`;
     const inputTypescriptFiles = `${inputFolder}/**/*.ts`;

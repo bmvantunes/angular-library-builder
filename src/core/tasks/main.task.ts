@@ -24,7 +24,7 @@ export class MainTask {
     this.copyFilesOutdirTask = new CopyFilesToOutdirTask();
   }
 
-  registerAllTasks(argv: any, onError: Function) {
+  registerAllTasks(argv: any, onError: () => void) {
     const deleteTaskName = this.deleteTask.registerTask(argv, onError);
     const inlineTaskName = this.inlineTask.registerTask(argv, onError, [deleteTaskName]);
     const copyTsconfigTaskName = this.copyTsconfigTask.registerTask(argv, onError, [inlineTaskName]);
