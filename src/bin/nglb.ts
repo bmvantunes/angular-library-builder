@@ -10,7 +10,7 @@ const argv = yargs
   .alias('help', 'h')
 
   // version
-  .version(() => require('../package.json').version)
+  .version()
   .alias('version', 'v')
 
   // usage
