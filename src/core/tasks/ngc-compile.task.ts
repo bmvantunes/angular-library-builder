@@ -15,16 +15,15 @@ export class NgcCompileTask implements ITask {
    */
   registerTask(argv: any, onError: () => void, dependencies: string[] = []): string {
     const taskName = 'compile-ngc';
-    const ngcArguments = { p: `${argv[OptionsKeys.OUT_DIR]}/tsconfig-ngc.json` };
+    const ngcArguments = ['-p', `${argv[OptionsKeys.OUT_DIR]}/tsconfig-ngc.json`];
 
     gulp.task(taskName, dependencies, (done: Function) => {
-      main(ngcArguments, Logger.error).then((exitCode: number) => {
-        if (exitCode === 0) {
-          done();
-        } else {
-          onError();
-        }
-      });
+      const exitCode = main(ngcArguments, Logger.error);
+      if (exitCode === 0) {
+        done();
+      } else {
+        onError();
+      }
     });
 
     return taskName;
