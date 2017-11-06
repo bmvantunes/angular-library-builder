@@ -50,7 +50,7 @@
     "@types/node-sass": "~3.10.32",
     "@types/yargs": "~8.0.2",
     "chai": "~4.1.2",
-    "chai-fs": "~1.0.0",
+    "chai-fs": "~2.0.0",
     "codecov": "~2.3.0",
     "commitizen": "~2.9.6",
     "cz-conventional-changelog": "~2.1.0",
