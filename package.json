@@ -48,7 +48,7 @@
     "@types/mocha": "~2.2.42",
     "@types/node": "~8.0.26",
     "@types/node-sass": "~3.10.32",
-    "@types/yargs": "~8.0.2",
+    "@types/yargs": "~10.0.0",
     "chai": "~4.1.2",
     "chai-fs": "~1.0.0",
     "codecov": "~2.3.0",
