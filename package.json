@@ -28,7 +28,7 @@
     "csso": "~3.2.0",
     "del": "~3.0.0",
     "gulp": "~3.9.1",
-    "gulp-inline-ng2-template": "~4.0.0",
+    "gulp-inline-ng2-template": "~4.1.0",
     "gulp-merge-json": "^1.1.0",
     "gulp-plumber": "^1.1.0",
     "html-minifier": "~3.5.3",
