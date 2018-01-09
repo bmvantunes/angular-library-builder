@@ -36,7 +36,7 @@
     "postcss": "~6.0.10",
     "rxjs": "^5.4.3",
     "typescript": "2.5.3",
-    "yargs": "~9.0.1",
+    "yargs": "~10.1.1",
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
