@@ -44,7 +44,7 @@
     "@types/chalk": "~0.4.31",
     "@types/del": "~3.0.0",
     "@types/gulp-plumber": "~0.0.31",
-    "@types/html-minifier": "~1.1.30",
+    "@types/html-minifier": "~3.5.2",
     "@types/mocha": "~2.2.42",
     "@types/node": "~8.0.26",
     "@types/node-sass": "~3.10.32",
