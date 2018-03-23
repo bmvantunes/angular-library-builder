@@ -1,3 +1,9 @@
+# Deprecated
+This project is no longer updated.
+There are better and easier solutions today to build angular libraries.
+A good example is [ng-packagr](https://github.com/dherges/ng-packagr)
+
+
 [![Build Status](https://travis-ci.org/bmvantunes/angular-library-builder.svg?branch=master)](https://travis-ci.org/bmvantunes/angular-library-builder)
 [![dependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/status.svg)](https://david-dm.org/bmvantunes/angular-library-builder)
 [![devDependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/dev-status.svg)](https://david-dm.org/bmvantunes/angular-library-builder?type=dev)
