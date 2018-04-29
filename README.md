@@ -1,3 +1,5 @@
+⛔️ [DEPRECATED] - @angular/cli version 6.0.0 has support for libraries
+
 [![Build Status](https://travis-ci.org/bmvantunes/angular-library-builder.svg?branch=master)](https://travis-ci.org/bmvantunes/angular-library-builder)
 [![dependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/status.svg)](https://david-dm.org/bmvantunes/angular-library-builder)
 [![devDependencies Status](https://david-dm.org/bmvantunes/angular-library-builder/dev-status.svg)](https://david-dm.org/bmvantunes/angular-library-builder?type=dev)
